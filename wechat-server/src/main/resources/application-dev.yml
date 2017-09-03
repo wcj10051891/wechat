@@ -1,0 +1,7 @@
+server:
+  port: 80
+wechat:
+  valid:
+    token: wangchengjietoken
+  appid: wx573ff934f27fd0f6
+  appsecret: dd78671a43b4a86c86272b202e1e8d18
