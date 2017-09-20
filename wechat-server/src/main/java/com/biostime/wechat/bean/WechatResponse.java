@@ -2,6 +2,8 @@ package com.biostime.wechat.bean;
 
 import org.springframework.util.StringUtils;
 
+import com.biostime.wechat.util.JsonUtils;
+
 public class WechatResponse {
 	private String errorcode;
 	private String errmsg;
@@ -24,5 +26,10 @@ public class WechatResponse {
 
 	public boolean success() {
 		return !StringUtils.hasText(errorcode) || "0".equals(errorcode);
+	}
+	
+	@Override
+	public String toString() {
+		return JsonUtils.toJson(this);
 	}
 }

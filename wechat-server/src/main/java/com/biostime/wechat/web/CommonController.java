@@ -10,14 +10,14 @@ import com.biostime.wechat.bean.AccessTokenResponse;
 import com.biostime.wechat.service.AccessTokenService;
 
 @RestController
-@RequestMapping("/wechat")
-public class WechatController {
+@RequestMapping("/common")
+public class CommonController {
 
 	@Autowired
 	private AccessTokenService accessTokenService;
 	
 	@RequestMapping(value="/accesstoken", method=RequestMethod.GET)
-	public AccessTokenResponse accesstoken(@RequestParam(required=false) int refresh) {
-		return this.accessTokenService.get(refresh == 1);
+	public AccessTokenResponse accesstoken(@RequestParam(required = false) Integer refresh) {
+		return this.accessTokenService.get(refresh != null && refresh == 1);
 	}
 }
